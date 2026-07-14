@@ -26,7 +26,7 @@
 
   header {
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
     padding-top: 8px;
   }
 
@@ -34,12 +34,13 @@
     font-size: 2.2rem;
     color: #f0c040;
     letter-spacing: 3px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
 
   .tagline {
-    font-size: 0.95rem;
-    color: #ccc;
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #FFD6BA;
   }
 
   .selection-container {
@@ -86,44 +87,14 @@
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
   }
 
-  .info-card summary {
+  .info-card h2 {
     font-size: 1.05rem;
     font-weight: bold;
     color: #7A2E2E;
-    cursor: pointer;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #f0c040;
   }
-  .info-card summary::-webkit-details-marker { display: none; }
-  .info-card summary::after {
-    content: '▼';
-    font-size: 0.7rem;
-    color: #a04040;
-    transition: transform 0.2s ease;
-  }
-  .info-card[open] summary::after { transform: rotate(180deg); }
-
-  .info-card summary::marker { content: ''; }
-
-  .info-card .body { margin-top: 12px; padding-top: 10px; border-top: 2px solid #f0c040; }
-
-  .info-card p {
-    font-size: 0.93rem;
-    line-height: 1.7;
-    color: #7A2E2E;
-    margin-bottom: 8px;
-  }
-  .info-card p:last-child { margin-bottom: 0; }
-
-  .info-card h3 {
-    font-size: 0.95rem;
-    font-weight: bold;
-    color: #a04040;
-    margin: 10px 0 3px;
-  }
-  .info-card h3:first-of-type { margin-top: 0; }
 
   .control-table {
     width: 100%;
@@ -145,6 +116,47 @@
     color: #a04040;
   }
 
+  .howto-toggle {
+    max-width: 680px;
+    margin: 0 auto 16px;
+  }
+  .howto-toggle summary {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #eee;
+    cursor: pointer;
+    list-style: none;
+    text-align: center;
+    padding: 6px;
+  }
+  .howto-toggle summary::-webkit-details-marker { display: none; }
+  .howto-toggle summary::after { content: ' ▼'; font-size: 0.7rem; }
+  .howto-toggle[open] summary::after { content: ' ▲'; }
+
+  .howto-toggle .body {
+    background: #fce9dc;
+    border-radius: 15px;
+    padding: 16px 22px;
+    margin-top: 8px;
+    color: #7A2E2E;
+  }
+
+  .howto-toggle p {
+    font-size: 0.93rem;
+    line-height: 1.7;
+    color: #7A2E2E;
+    margin-bottom: 8px;
+  }
+  .howto-toggle p:last-child { margin-bottom: 0; }
+
+  .howto-toggle h3 {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #a04040;
+    margin: 10px 0 3px;
+  }
+  .howto-toggle h3:first-of-type { margin-top: 0; }
+
   footer {
     text-align: center;
     color: #d1cbcb;
@@ -158,7 +170,7 @@
 
 <header>
   <h1>NumNum</h1>
-  <div class="tagline">Drop and merge number cards — no time pressure.</div>
+  <div class="tagline">Drop and merge number cards.</div>
 </header>
 
 <div class="selection-container">
@@ -169,7 +181,25 @@
   </div>
 </div>
 
-<details class="info-card">
+<div class="info-card">
+  <h2>Controls</h2>
+  <table class="control-table">
+    <tr>
+      <td>← →</td>
+      <td>Select column (PC)</td>
+    </tr>
+    <tr>
+      <td>Enter, Space</td>
+      <td>Drop card (PC)</td>
+    </tr>
+    <tr>
+      <td>Tap column button</td>
+      <td>Drop card (mobile)</td>
+    </tr>
+  </table>
+</div>
+
+<details class="howto-toggle">
   <summary>How to Play</summary>
   <div class="body">
     <h3>Drop Cards</h3>
@@ -183,26 +213,6 @@
 
     <h3>Game Over</h3>
     <p>The game ends when the top row is full. Watch the top.</p>
-  </div>
-</details>
-
-<details class="info-card">
-  <summary>Controls</summary>
-  <div class="body">
-    <table class="control-table">
-      <tr>
-        <td>← →</td>
-        <td>Select column (PC)</td>
-      </tr>
-      <tr>
-        <td>Enter, Space</td>
-        <td>Drop card (PC)</td>
-      </tr>
-      <tr>
-        <td>Tap column button</td>
-        <td>Drop card (mobile)</td>
-      </tr>
-    </table>
   </div>
 </details>
 
